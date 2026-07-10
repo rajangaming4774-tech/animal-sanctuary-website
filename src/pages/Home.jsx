@@ -22,27 +22,31 @@ export default function Home() {
     <>
       {/* ---------------- HERO ---------------- */}
       <section className="hero">
-        <div className="hero-bg" style={{ backgroundImage: `url(${heroImg})` }} />
         <div className="wrap">
-          <div className="hero-inner">
-            <span className="eyebrow"><Icon name="paw" size={15} /> Welcome to Karuna Sanctuary</span>
-            <h1 className="mt-2">
-              Turn <span className="strike">Suffering</span><br />Into <em>Second Chances</em>
-            </h1>
-            <p className="mt-2">
-              We rescue, heal and rehome animals in need across {SANCTUARY.city}. Your donation turns
-              suffering into second chances — transparently, one animal at a time.
-            </p>
-            <div className="hero-cta">
-              <Link to="/donate" className="btn btn-primary">Donate Now <Icon name="arrow" size={18} /></Link>
-              <Link to="/animals" className="btn btn-outline">Meet the Animals</Link>
-            </div>
-            <div className="hero-float">
-              <span className="dot"><Icon name="paw" size={22} /></span>
-              <div>
-                <b>4,597+</b>
-                <div style={{ fontSize: '.8rem', color: 'var(--ink-500)' }}>lives rescued</div>
+          <div className="hero-grid">
+            <div className="hero-inner">
+              <span className="eyebrow"><Icon name="paw" size={15} /> Welcome to Karuna Sanctuary</span>
+              <h1 className="mt-2">
+                Turn <span className="strike">Suffering</span><br />Into <em>Second Chances</em>
+              </h1>
+              <p className="mt-2">
+                We rescue, heal and rehome animals in need across {SANCTUARY.city}. Your donation turns
+                suffering into second chances — transparently, one animal at a time.
+              </p>
+              <div className="hero-cta">
+                <Link to="/donate" className="btn btn-primary">Donate Now <Icon name="arrow" size={18} /></Link>
+                <Link to="/animals" className="btn btn-outline">Meet the Animals</Link>
               </div>
+              <div className="hero-float">
+                <span className="dot"><Icon name="paw" size={22} /></span>
+                <div>
+                  <b>4,597+</b>
+                  <div style={{ fontSize: '.8rem', color: 'var(--ink-500)' }}>lives rescued</div>
+                </div>
+              </div>
+            </div>
+            <div className="hero-photo">
+              <img src={heroImg} alt="A rescued scarlet macaw at Karuna Sanctuary" loading="eager" />
             </div>
           </div>
         </div>

@@ -175,68 +175,55 @@ textarea { resize: vertical; min-height: 110px; }
 .newsletter input { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.2); color: #fff; }
 .newsletter input::placeholder { color: #9dc4b2; }
 
-/* ---------- Hero (white-feather photo) ---------- */
-.hero {
-  position: relative; color: var(--ink-900); background-color: #fff;
-  overflow: hidden; isolation: isolate;
-}
-/* Full-bleed photo that blends into the white page */
-.hero-bg {
-  position: absolute; inset: 0; z-index: 0;
-  background-size: cover; background-position: 70% 30%; background-repeat: no-repeat;
-  transform: scale(1.06); animation: heroZoom 18s ease-out forwards;
-}
-@keyframes heroZoom { to { transform: scale(1); } }
-@media (prefers-reduced-motion: reduce) { .hero-bg { animation: none; transform: none; } }
-/* White feather: left scrim for dark text + top/bottom fade into white (no dark overlay) */
+/* ---------- Hero (two-column, white bg, contained photo) ---------- */
+.hero { position: relative; background: #fff; color: var(--ink-900); overflow: hidden; }
 .hero::before {
-  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  content: ""; position: absolute; inset: 0; pointer-events: none;
   background:
-    linear-gradient(to top, rgba(255,255,255,0) 90%, rgba(255,255,255,.5) 100%),
-    linear-gradient(to bottom, rgba(255,255,255,0) 42%, rgba(255,255,255,.55) 74%, rgba(255,255,255,.94) 92%, #fff 100%),
-    linear-gradient(95deg, rgba(255,255,255,.97) 0%, rgba(255,255,255,.95) 30%, rgba(255,255,255,.80) 44%, rgba(255,255,255,.32) 60%, rgba(255,255,255,0) 78%);
+    radial-gradient(680px 460px at 88% 18%, rgba(130,195,65,.16), transparent 60%),
+    radial-gradient(560px 420px at 4% 100%, rgba(95,158,46,.10), transparent 55%);
 }
-/* soft right-edge feather so the photo never hits a hard border */
-.hero::after {
-  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: linear-gradient(to left, rgba(255,255,255,.55) 0%, rgba(255,255,255,0) 14%);
+.hero-grid {
+  position: relative; z-index: 1; display: grid; grid-template-columns: 1.06fr .94fr;
+  gap: 44px; align-items: center; padding: 76px 0 88px;
 }
-.hero-inner { position: relative; z-index: 2; max-width: 620px; padding: 118px 0 148px; }
-/* subtle frosted panel behind copy — guarantees AA readability without reading as a card */
-.hero-inner::before {
-  content: ""; position: absolute; z-index: -1; inset: 84px -28px 96px -9999px;
-  background: linear-gradient(90deg, rgba(255,255,255,.72), rgba(255,255,255,.42) 70%, rgba(255,255,255,0));
-  -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
-}
-.hero h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.6rem, 5.5vw, 4.4rem); line-height: 1.02; text-transform: uppercase; color: var(--ink-900); letter-spacing: -.01em; }
+.hero-inner { max-width: 600px; }
+.hero h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.5rem, 5.2vw, 4.2rem); line-height: 1.03; text-transform: uppercase; color: var(--ink-900); letter-spacing: -.01em; }
 .hero h1 em { color: var(--green-700); font-style: normal; }
 .hero h1 .strike { position: relative; white-space: nowrap; color: var(--ink-500); }
 .hero h1 .strike::after {
   content: ""; position: absolute; left: -2%; right: -2%; top: 52%; height: .11em;
   border-radius: 4px; background: var(--green-600); transform: rotate(-3deg);
 }
-.hero p { color: var(--ink-700); max-width: 52ch; font-size: 1.06rem; line-height: 1.6; }
+.hero p { color: var(--ink-700); max-width: 50ch; font-size: 1.06rem; line-height: 1.6; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
-/* light stat chip on white hero */
 .hero-float {
-  display: inline-flex; align-items: center; gap: 14px; margin-top: 34px;
-  padding: 14px 20px 14px 14px; background: rgba(255,255,255,.9);
-  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  display: inline-flex; align-items: center; gap: 14px; margin-top: 32px;
+  padding: 14px 20px 14px 14px; background: #fff;
   border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); color: var(--ink-900);
 }
-.hero-float b { display: block; font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; line-height: 1.1; color: var(--ink-900); }
+.hero-float b { display: block; font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; line-height: 1.1; }
 .hero-float .dot { display: inline-grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: var(--green-100); color: var(--green-700); flex: none; }
 
-@media (max-width: 780px) {
-  /* vertical white scrim, kept high through the whole copy region (no low-opacity valley) */
-  .hero::before {
-    background: linear-gradient(to bottom, rgba(255,255,255,.97) 0%, rgba(255,255,255,.93) 40%, rgba(255,255,255,.85) 66%, rgba(255,255,255,.9) 84%, #fff 100%);
-  }
-  .hero::after { display: none; }
-  .hero-bg { background-position: 65% 26%; }
-  .hero-inner { max-width: none; padding: 84px 0 104px; }
-  .hero-inner::before { inset: 60px -9999px 72px -9999px; background: linear-gradient(180deg, rgba(255,255,255,.82), rgba(255,255,255,.6)); }
-  .hero p { font-size: 1rem; }
+/* Contained, fully-visible photo on the right */
+.hero-photo { position: relative; display: flex; justify-content: center; }
+.hero-photo::before {
+  content: ""; position: absolute; z-index: 0; width: 90%; aspect-ratio: 1;
+  right: 0; top: 50%; transform: translateY(-50%);
+  background: radial-gradient(circle, rgba(130,195,65,.22), rgba(130,195,65,0) 70%);
+}
+.hero-photo img {
+  position: relative; z-index: 1; width: 100%; max-width: 460px; height: auto;
+  border-radius: 22px; box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 960px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 30px; padding: 58px 0 66px; }
+  .hero-photo { justify-content: flex-start; }
+  .hero-photo img { max-width: 380px; }
+}
+@media (max-width: 560px) {
+  .hero-photo img { max-width: 100%; }
 }
 .hero-float b { font-size: 1.15rem; }
 .hero-float .dot { width: 42px; height: 42px; border-radius: 12px; background: var(--green-100); color: var(--green-700); display: grid; place-items: center; }
