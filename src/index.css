@@ -175,13 +175,13 @@ textarea { resize: vertical; min-height: 110px; }
 .newsletter input { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.2); color: #fff; }
 .newsletter input::placeholder { color: #9dc4b2; }
 
-/* ---------- Hero (two-column, white bg, contained photo) ---------- */
-.hero { position: relative; background: #fff; color: var(--ink-900); overflow: hidden; }
+/* ---------- Hero (two-column, shaded green bg, masked photo) ---------- */
+.hero { position: relative; background: linear-gradient(150deg, #f6faef 0%, #e9f4da 52%, #dcefc6 100%); color: var(--ink-900); overflow: hidden; }
 .hero::before {
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background:
-    radial-gradient(680px 460px at 88% 18%, rgba(130,195,65,.16), transparent 60%),
-    radial-gradient(560px 420px at 4% 100%, rgba(95,158,46,.10), transparent 55%);
+    radial-gradient(820px 560px at 94% 88%, rgba(95,158,46,.22), transparent 62%),
+    radial-gradient(520px 420px at 2% 6%, rgba(130,195,65,.12), transparent 58%);
 }
 .hero-grid {
   position: relative; z-index: 1; display: grid; grid-template-columns: 1.06fr .94fr;
@@ -205,16 +205,18 @@ textarea { resize: vertical; min-height: 110px; }
 .hero-float b { display: block; font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; line-height: 1.1; }
 .hero-float .dot { display: inline-grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: var(--green-100); color: var(--green-700); flex: none; }
 
-/* Contained, fully-visible photo on the right */
+/* Photo masked so its edges feather into the shaded background */
 .hero-photo { position: relative; display: flex; justify-content: center; }
 .hero-photo::before {
-  content: ""; position: absolute; z-index: 0; width: 90%; aspect-ratio: 1;
+  content: ""; position: absolute; z-index: 0; width: 96%; aspect-ratio: 1;
   right: 0; top: 50%; transform: translateY(-50%);
-  background: radial-gradient(circle, rgba(130,195,65,.22), rgba(130,195,65,0) 70%);
+  background: radial-gradient(circle, rgba(130,195,65,.30), rgba(130,195,65,0) 68%);
 }
 .hero-photo img {
-  position: relative; z-index: 1; width: 100%; max-width: 460px; height: auto;
-  border-radius: 22px; box-shadow: var(--shadow-lg);
+  position: relative; z-index: 1; width: 100%; max-width: 470px; height: auto;
+  -webkit-mask-image: radial-gradient(120% 120% at 50% 42%, #000 52%, rgba(0,0,0,.6) 72%, transparent 90%);
+  mask-image: radial-gradient(120% 120% at 50% 42%, #000 52%, rgba(0,0,0,.6) 72%, transparent 90%);
+  filter: drop-shadow(0 22px 42px rgba(40,60,20,.28));
 }
 
 @media (max-width: 960px) {
