@@ -91,10 +91,11 @@ ul { margin: 0; padding: 0; list-style: none; }
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 9px;
   font-family: inherit; font-weight: 700; font-size: .98rem;
-  padding: 13px 26px; border-radius: var(--radius-pill);
+  padding: 13px 26px; border-radius: 8px;
   border: 2px solid transparent; cursor: pointer; transition: .18s ease;
   white-space: nowrap;
 }
+.btn-sm { border-radius: 7px; }
 .btn:active { transform: translateY(1px); }
 .btn-primary { background: var(--green-600); color: #fff; box-shadow: 0 10px 22px rgba(31,157,85,.28); }
 .btn-primary:hover { background: var(--green-700); box-shadow: 0 14px 30px rgba(31,157,85,.36); }
