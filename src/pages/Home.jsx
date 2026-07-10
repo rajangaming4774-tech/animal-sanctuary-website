@@ -4,7 +4,7 @@ import { AnimalCard, CauseCard, ProgressBar, CountUp, SectionHead } from '../com
 import { ANIMALS, CAUSES, STATS, STORIES, SANCTUARY, inr } from '../data/site'
 
 const heroImg =
-  'https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1700&q=85'
+  'https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=1700&q=85'
 
 const waysToHelp = [
   { icon: 'heart', color: 'var(--green-600)', title: 'Donate', text: 'Fund a rescue, surgery or a warm meal — from ₹500 in under a minute.', to: '/donate', cta: 'Give now' },
@@ -25,7 +25,7 @@ export default function Home() {
         <div className="hero-bg" style={{ backgroundImage: `url(${heroImg})` }} />
         <div className="wrap">
           <div className="hero-inner">
-            <span className="eyebrow on-dark"><Icon name="paw" size={15} /> Welcome to Karuna Sanctuary</span>
+            <span className="eyebrow"><Icon name="paw" size={15} /> Welcome to Karuna Sanctuary</span>
             <h1 className="mt-2">
               Turn <span className="strike">Suffering</span><br />Into <em>Second Chances</em>
             </h1>
@@ -35,13 +35,13 @@ export default function Home() {
             </p>
             <div className="hero-cta">
               <Link to="/donate" className="btn btn-primary">Donate Now <Icon name="arrow" size={18} /></Link>
-              <Link to="/animals" className="btn btn-ghost">Meet the Animals</Link>
+              <Link to="/animals" className="btn btn-outline">Meet the Animals</Link>
             </div>
             <div className="hero-float">
               <span className="dot"><Icon name="paw" size={22} /></span>
               <div>
                 <b>4,597+</b>
-                <div style={{ fontSize: '.8rem', opacity: .85 }}>lives rescued</div>
+                <div style={{ fontSize: '.8rem', color: 'var(--ink-500)' }}>lives rescued</div>
               </div>
             </div>
           </div>
