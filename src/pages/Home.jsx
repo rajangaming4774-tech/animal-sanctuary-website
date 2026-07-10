@@ -4,7 +4,7 @@ import { AnimalCard, CauseCard, ProgressBar, CountUp, SectionHead } from '../com
 import { ANIMALS, CAUSES, STATS, STORIES, SANCTUARY, inr } from '../data/site'
 
 const heroImg =
-  'https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?auto=format&fit=crop&w=1600&q=80'
+  'https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1700&q=85'
 
 const waysToHelp = [
   { icon: 'heart', color: 'var(--green-600)', title: 'Donate', text: 'Fund a rescue, surgery or a warm meal — from ₹500 in under a minute.', to: '/donate', cta: 'Give now' },
@@ -21,7 +21,8 @@ export default function Home() {
   return (
     <>
       {/* ---------------- HERO ---------------- */}
-      <section className="hero" style={{ backgroundImage: `url(${heroImg})` }}>
+      <section className="hero">
+        <div className="hero-bg" style={{ backgroundImage: `url(${heroImg})` }} />
         <div className="wrap">
           <div className="hero-inner">
             <span className="eyebrow on-dark"><Icon name="paw" size={15} /> Welcome to Karuna Sanctuary</span>

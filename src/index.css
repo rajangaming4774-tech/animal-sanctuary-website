@@ -176,11 +176,18 @@ textarea { resize: vertical; min-height: 110px; }
 .newsletter input::placeholder { color: #9dc4b2; }
 
 /* ---------- Hero (photo overlay) ---------- */
-.hero { position: relative; color: #fff; background-color: #315a17; background-size: cover; background-position: center; overflow: hidden; }
-.hero::before { content:""; position:absolute; inset:0;
-  background: linear-gradient(90deg, rgba(20,34,8,.86) 0%, rgba(20,34,8,.58) 46%, rgba(20,34,8,.12) 100%);
+.hero { position: relative; color: #fff; background-color: #223d10; overflow: hidden; }
+.hero-bg {
+  position: absolute; inset: 0; background-size: cover; background-position: center 35%;
+  transform: scale(1.06); animation: heroZoom 18s ease-out forwards;
 }
-.hero-inner { position: relative; max-width: 640px; padding: 104px 0 128px; }
+@keyframes heroZoom { to { transform: scale(1); } }
+.hero::before { content:""; position:absolute; inset:0; z-index: 1;
+  background:
+    linear-gradient(94deg, rgba(19,32,7,.90) 0%, rgba(21,36,9,.66) 42%, rgba(21,36,9,.20) 72%, rgba(21,36,9,.08) 100%),
+    radial-gradient(120% 120% at 100% 100%, rgba(0,0,0,.34), transparent 55%);
+}
+.hero-inner { position: relative; z-index: 2; max-width: 640px; padding: 112px 0 136px; }
 .hero h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.6rem, 5.5vw, 4.4rem); line-height: 1.02; letter-spacing: -.01em; text-transform: uppercase; }
 .hero h1 em { color: var(--green-500); font-style: normal; }
 .hero h1 .strike { position: relative; white-space: nowrap; }
