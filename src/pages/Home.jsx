@@ -4,7 +4,7 @@ import { AnimalCard, CauseCard, ProgressBar, CountUp, SectionHead } from '../com
 import { ANIMALS, CAUSES, STATS, STORIES, SANCTUARY, inr } from '../data/site'
 
 const heroImg =
-  'https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=900&q=80'
+  'https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?auto=format&fit=crop&w=1600&q=80'
 
 const waysToHelp = [
   { icon: 'heart', color: 'var(--green-600)', title: 'Donate', text: 'Fund a rescue, surgery or a warm meal — from ₹500 in under a minute.', to: '/donate', cta: 'Give now' },
@@ -21,10 +21,10 @@ export default function Home() {
   return (
     <>
       {/* ---------------- HERO ---------------- */}
-      <section className="hero">
-        <div className="wrap hero-inner">
-          <div>
-            <span className="eyebrow"><Icon name="paw" size={15} /> One Step For Humanity</span>
+      <section className="hero" style={{ backgroundImage: `url(${heroImg})` }}>
+        <div className="wrap">
+          <div className="hero-inner">
+            <span className="eyebrow on-dark"><Icon name="paw" size={15} /> Welcome to Karuna Sanctuary</span>
             <h1 className="mt-2">
               Turn <span className="strike">Suffering</span><br />Into <em>Second Chances</em>
             </h1>
@@ -34,30 +34,13 @@ export default function Home() {
             </p>
             <div className="hero-cta">
               <Link to="/donate" className="btn btn-primary">Donate Now <Icon name="arrow" size={18} /></Link>
-              <Link to="/animals" className="btn btn-outline">Meet the Animals</Link>
+              <Link to="/animals" className="btn btn-ghost">Meet the Animals</Link>
             </div>
-
-            {/* Featured urgent case mini-bar */}
-            <div className="box mt-4" style={{ maxWidth: 460, borderRadius: 20 }}>
-              <div className="flex between items-center" style={{ marginBottom: 10 }}>
-                <span className="badge badge-urgent">Urgent · {featured.name}</span>
-                <span className="muted" style={{ fontSize: '.82rem' }}>{featured.donors} donors</span>
-              </div>
-              <ProgressBar raised={featured.raised} goal={featured.goal} accent />
-              <div className="flex between mt-1" style={{ fontSize: '.86rem' }}>
-                <b>{inr(featured.raised)} raised</b>
-                <span className="muted">of {inr(featured.goal)}</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="hero-media">
-            <img className="photo" src={heroImg} alt="A rescued animal at Karuna Sanctuary" />
             <div className="hero-float">
               <span className="dot"><Icon name="paw" size={22} /></span>
               <div>
                 <b>4,597+</b>
-                <div className="muted" style={{ fontSize: '.8rem' }}>lives rescued</div>
+                <div style={{ fontSize: '.8rem', opacity: .85 }}>lives rescued</div>
               </div>
             </div>
           </div>
