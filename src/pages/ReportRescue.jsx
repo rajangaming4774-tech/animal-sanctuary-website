@@ -53,7 +53,7 @@ export default function ReportRescue() {
                 <div style={{ color: '#fff', opacity: .95 }}>{SANCTUARY.phone} · 24×7 helpline</div>
               </div>
             </div>
-            <a href={`tel:${SANCTUARY.phone.replace(/\s/g, '')}`} className="btn" style={{ background: '#fff', color: 'var(--orange-600)' }}>Call helpline</a>
+            <a href={`tel:${SANCTUARY.phone.replace(/\s/g, '')}`} className="btn" style={{ background: '#fff', color: 'var(--green-800)' }}>Call helpline</a>
           </div>
 
           <form className="box" onSubmit={(e) => { e.preventDefault(); setSent(true) }}>

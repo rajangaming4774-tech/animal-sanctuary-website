@@ -46,7 +46,7 @@ export default function Sponsor() {
       </section>
 
       {/* Perks */}
-      <section className="section" style={{ background: 'var(--green-50)' }}>
+      <section className="section" style={{ background: 'var(--cream)' }}>
         <div className="wrap">
           <SectionHead center eyebrow="What you get" icon="star" title="Sponsorship perks" />
           <div className="grid cols-4">

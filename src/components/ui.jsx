@@ -50,7 +50,7 @@ export function CountUp({ end, suffix = '', duration = 1500 }) {
   )
 }
 
-/* ---------- Animal card ---------- */
+/* ---------- Animal card (pet-shop style) ---------- */
 export function AnimalCard({ a }) {
   const meta = statusMeta[a.status] || {}
   const showFunding = a.status === 'needs_funds'
@@ -66,7 +66,16 @@ export function AnimalCard({ a }) {
       </Link>
       <div className="body">
         <h3>{a.name}</h3>
-        <div className="meta">{a.species} · {a.breed} · {a.age}</div>
+        <div className="meta">
+          <span style={{
+            display: 'inline-flex', alignItems: 'center', gap: 4,
+            background: 'var(--green-50)', padding: '3px 10px', borderRadius: 'var(--radius-pill)',
+            fontSize: '.8rem', color: 'var(--green-700)', fontWeight: 600, marginRight: 6,
+          }}>
+            {a.species}
+          </span>
+          {a.breed} · {a.age}
+        </div>
         <p className="hook">{a.hook}</p>
 
         {showFunding && (
@@ -130,13 +139,13 @@ export function CauseCard({ c }) {
 /* ---------- Section heading ---------- */
 export function SectionHead({ eyebrow, title, lead, center, icon }) {
   return (
-    <div className={center ? 'center' : ''} style={{ marginBottom: 40 }}>
+    <div className={center ? 'center' : ''} style={{ marginBottom: 42 }}>
       {eyebrow && (
         <span className="eyebrow">
           {icon && <Icon name={icon} size={15} />} {eyebrow}
         </span>
       )}
-      <h2 className="section-title" style={{ marginTop: 12 }}>{title}</h2>
+      <h2 className="section-title" style={{ marginTop: 14 }}>{title}</h2>
       {lead && <p className="section-lead">{lead}</p>}
     </div>
   )

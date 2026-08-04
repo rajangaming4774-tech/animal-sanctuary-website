@@ -63,7 +63,7 @@ export default function Transparency() {
         </div>
       </section>
 
-      <section className="section" style={{ background: 'var(--green-50)' }}>
+      <section className="section" style={{ background: 'var(--cream)' }}>
         <div className="wrap">
           <SectionHead center eyebrow="Open books" icon="shield" title="Reports & certificates"
             lead="Everything is public. Download our audited financials and legal registrations." />
@@ -92,7 +92,7 @@ export default function Transparency() {
             { icon: 'mail', title: 'Instant receipts', text: '80G tax receipts emailed automatically after every gift.' },
           ].map((b) => (
             <div className="box" key={b.title}>
-              <span className="ic" style={{ width: 52, height: 52, borderRadius: 14, background: 'var(--orange-100)', color: 'var(--orange-600)', display: 'grid', placeItems: 'center' }}>
+              <span className="ic" style={{ width: 52, height: 52, borderRadius: 18, background: 'var(--accent-100)', color: 'var(--accent-600)', display: 'grid', placeItems: 'center' }}>
                 <Icon name={b.icon} size={24} />
               </span>
               <h3 style={{ marginTop: 14 }}>{b.title}</h3>

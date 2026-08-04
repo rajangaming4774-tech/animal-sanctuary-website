@@ -25,11 +25,11 @@ export default function Donate() {
       <PageHeader
         title="Make a Donation"
         crumb="Donate"
-        lead="Give where it’s needed most. 95% of every rupee goes straight to animal care — and you get an 80G receipt."
+        lead="Give where it's needed most. 95% of every rupee goes straight to animal care — and you get an 80G receipt."
       />
       <section className="section">
         <div className="wrap" style={{ maxWidth: 720 }}>
-          <div className="box">
+          <div className="box" style={{ borderRadius: 'var(--radius-lg)', padding: 32 }}>
             <div className="toggle-row">
               <button className={freq === 'once' ? 'active' : ''} onClick={() => setFreq('once')}>One-time gift</button>
               <button className={freq === 'monthly' ? 'active' : ''} onClick={() => setFreq('monthly')}>

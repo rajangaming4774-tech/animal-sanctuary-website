@@ -9,16 +9,20 @@ export default function Footer() {
         <div className="cols">
           <div>
             <div className="foot-brand">
-              <span className="logo" style={{ width: 40, height: 40, borderRadius: 12, display: 'grid', placeItems: 'center', background: 'var(--green-600)' }}>
+              <span style={{
+                width: 44, height: 44, borderRadius: 14, display: 'grid', placeItems: 'center',
+                background: 'linear-gradient(135deg, var(--green-600), var(--green-500))',
+                boxShadow: '0 4px 14px rgba(74,139,63,.4)',
+              }}>
                 <Icon name="paw" size={22} />
               </span>
               {SANCTUARY.name}
             </div>
-            <p style={{ color: '#cfe8da' }}>
+            <p style={{ color: '#c3ddb5', lineHeight: 1.7 }}>
               A registered trust rescuing, healing and rehoming animals across {SANCTUARY.city}. Every rupee is tracked to an animal.
             </p>
-            <p style={{ color: '#9dc4b2', fontSize: '.85rem', marginBottom: 4 }}>{SANCTUARY.reg}</p>
-            <p style={{ color: '#9dc4b2', fontSize: '.85rem' }}>{SANCTUARY.g80}</p>
+            <p style={{ color: '#8aab7c', fontSize: '.85rem', marginBottom: 4 }}>{SANCTUARY.reg}</p>
+            <p style={{ color: '#8aab7c', fontSize: '.85rem' }}>{SANCTUARY.g80}</p>
           </div>
 
           <div>
@@ -47,13 +51,13 @@ export default function Footer() {
           <div>
             <h4>Get in touch</h4>
             <ul>
-              <li className="flex items-center gap-2" style={{ gap: 8 }}><Icon name="location" size={16} /> {SANCTUARY.address}</li>
-              <li className="flex items-center" style={{ gap: 8 }}><Icon name="phone" size={16} /> {SANCTUARY.phone}</li>
-              <li className="flex items-center" style={{ gap: 8 }}><Icon name="mail" size={16} /> {SANCTUARY.email}</li>
+              <li className="flex items-center" style={{ gap: 10 }}><Icon name="location" size={16} /> {SANCTUARY.address}</li>
+              <li className="flex items-center" style={{ gap: 10 }}><Icon name="phone" size={16} /> {SANCTUARY.phone}</li>
+              <li className="flex items-center" style={{ gap: 10 }}><Icon name="mail" size={16} /> {SANCTUARY.email}</li>
             </ul>
             <div className="newsletter">
               <input type="email" placeholder="Your email" aria-label="Newsletter email" />
-              <button className="btn btn-accent btn-sm">Join</button>
+              <button className="btn btn-primary btn-sm" style={{ borderRadius: 'var(--radius-pill)' }}>Join</button>
             </div>
           </div>
         </div>

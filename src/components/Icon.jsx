@@ -23,10 +23,19 @@ const paths = {
   close: <path d="M6 6l12 12M18 6 6 18"/>,
   sparkle: <path d="M12 3v4m0 10v4M3 12h4m10 0h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/>,
   quote: <path d="M7 7h4v4c0 3-2 5-4 6v-2c1-.6 2-1.6 2-3H7V7Zm8 0h4v4c0 3-2 5-4 6v-2c1-.6 2-1.6 2-3h-2V7Z"/>,
+  // New icons for the redesign
+  search: <><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></>,
+  filter: <><path d="M3 6h18M6 12h12M9 18h6"/></>,
+  bag: <><path d="M4 8h16l-1.5 10a2 2 0 0 1-2 1.7H7.5a2 2 0 0 1-2-1.7L4 8Z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></>,
+  truck: <><rect x="1" y="8" width="15" height="9" rx="1"/><path d="M16 12h4l2 3v2h-6v-5Z"/><circle cx="6" cy="19" r="2"/><circle cx="19" cy="19" r="2"/></>,
+  play: <path d="M6 4l14 8-14 8V4Z"/>,
+  download: <><path d="M12 3v14m0 0-5-5m5 5 5-5"/><path d="M4 19h16"/></>,
+  eye: <><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></>,
+  trophy: <><path d="M8 21h8M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4Z"/><path d="M7 7H4a1 1 0 0 0-1 1v1a3 3 0 0 0 3 3h1M17 7h3a1 1 0 0 1 1 1v1a3 3 0 0 1-3 3h-1"/></>,
 }
 
 export default function Icon({ name, size = 22, stroke = 2, className = '', style }) {
-  const filled = ['heart', 'star', 'quote', 'whatsapp'].includes(name)
+  const filled = ['heart', 'star', 'quote', 'whatsapp', 'play'].includes(name)
   return (
     <svg
       className={className}

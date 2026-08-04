@@ -2,6 +2,7 @@ import { useState } from 'react'
 import PageHeader from '../components/PageHeader'
 import { AnimalCard } from '../components/ui'
 import { ANIMALS } from '../data/site'
+import Icon from '../components/Icon'
 
 const filters = [
   { key: 'all', label: 'All animals' },
@@ -31,7 +32,7 @@ export default function Animals() {
       />
       <section className="section">
         <div className="wrap">
-          <div className="flex between wrap-flex" style={{ gap: 16, marginBottom: 8 }}>
+          <div className="flex between wrap-flex" style={{ gap: 16, marginBottom: 12 }}>
             <div className="filters">
               {filters.map((f) => (
                 <button key={f.key} className={`chip ${status === f.key ? 'active' : ''}`} onClick={() => setStatus(f.key)}>
@@ -55,7 +56,11 @@ export default function Animals() {
               {list.map((a) => <AnimalCard key={a.slug} a={a} />)}
             </div>
           ) : (
-            <div className="box center">No animals match these filters. Try widening your search.</div>
+            <div className="box center" style={{ padding: 48, borderRadius: 'var(--radius-lg)' }}>
+              <Icon name="search" size={40} style={{ color: 'var(--ink-300)', marginBottom: 16 }} />
+              <h3 style={{ color: 'var(--ink-500)' }}>No animals match these filters</h3>
+              <p className="muted">Try widening your search.</p>
+            </div>
           )}
         </div>
       </section>

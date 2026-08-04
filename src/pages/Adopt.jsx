@@ -36,7 +36,7 @@ export default function Adopt() {
         </div>
       </section>
 
-      <section className="section" style={{ background: 'var(--green-50)' }}>
+      <section className="section" style={{ background: 'var(--cream)' }}>
         <div className="wrap">
           <SectionHead eyebrow="Ready to adopt" icon="paw" title="Animals looking for a home" />
           {adoptable.length ? (

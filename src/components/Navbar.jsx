@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import Icon from './Icon'
 import { SANCTUARY } from '../data/site'
@@ -14,8 +14,16 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
-    <header className={`nav ${open ? 'open' : ''}`}>
+    <header className={`nav ${open ? 'open' : ''} ${scrolled ? 'scrolled' : ''}`}>
       <div className="wrap nav-inner">
         <Link to="/" className="brand" onClick={() => setOpen(false)}>
           <span className="logo"><Icon name="paw" size={22} /></span>

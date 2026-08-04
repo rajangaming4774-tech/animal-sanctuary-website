@@ -250,7 +250,7 @@ export default function AnimalProfile() {
       </section>
 
       {/* Related */}
-      <section className="section" style={{ background: 'var(--green-50)' }}>
+      <section className="section" style={{ background: 'var(--cream)' }}>
         <div className="wrap">
           <h2 className="section-title" style={{ fontSize: '1.6rem', marginBottom: 26 }}>Others who need help</h2>
           <div className="grid cols-3">

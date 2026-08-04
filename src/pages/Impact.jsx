@@ -32,7 +32,7 @@ export default function Impact() {
         </div>
       </section>
 
-      <section className="section" style={{ background: 'var(--green-50)' }}>
+      <section className="section" style={{ background: 'var(--cream)' }}>
         <div className="wrap">
           <SectionHead center eyebrow="Before & after" icon="star" title="Transformation stories"
             lead="Every one of these was hopeless once. Look at them now." />
@@ -65,7 +65,7 @@ export default function Impact() {
           <div className="grid cols-3">
             {testimonials.map((t) => (
               <div className="box" key={t.name}>
-                <span style={{ color: 'var(--orange-500)' }}><Icon name="quote" size={30} /></span>
+                <span style={{ color: 'var(--accent-500)' }}><Icon name="quote" size={30} /></span>
                 <p style={{ fontSize: '1.02rem', color: 'var(--ink-900)' }}>“{t.text}”</p>
                 <div className="flex items-center mt-2" style={{ gap: 12 }}>
                   <div className="avatar">{t.name[0]}</div>
